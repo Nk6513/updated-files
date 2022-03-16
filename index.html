@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Testifi Project</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik+Mono+One">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+		
+
+		
+
+	</style>
+
+    <!-- Map CSS and JavaScript Files -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class="text-center">
+            <h2 class="d-md-flex justify-content-md-center">IP Address Tracker</h2>
+            <div class="input-group d-sm-table-cell d-md-flex mx-auto justify-content-md-center">
+                <div class="input-group-prepend"></div>
+                <input class="form-control" type="text" placeholder="Search for any IP address or domain" style="border-top-left-radius: 12px;border-bottom-left-radius: 12px;">
+                <div class="input-group-append"><button class="btn btn-dark" type="button"><strong>&gt;</strong></button></div>
+            </div>
+        </header>
+
+
+    </div>
+
+
+    <div id="overdev" class="text-left d-md-table mx-auto overflow-hidden" >
+        <div class="row text-center justify-content-center">
+            <div class="col"><span>IP ADDRESS</span>
+                <h3>192.212.174.101</h3>
+            </div>
+            <div class="col"><span>LOCATION</span>
+                <h3>Brooklyn, NY 10001</h3>
+            </div>
+            <div class="col"><span>TIMEZONE</span>
+                <h3 style="padding-left: 2em; padding-right:2em;">
+                    UTC-05:00</h3>
+            </div>
+            <div class="col" id="isp"><span>ISP</span>
+                <h3>
+                    SpaceX Starlink
+                    </h3>
+            </div>
+        </div>
+
+
+        
+    </div>
+
+
+
+
+     
+
+
+
+
+        <div id="main1">
+
+<h2>Map Area</h2>
+             <!-- <div id="issMap" ></div> -->
+           
+			<script>
+
+var map = L.map('issMap').setView([51.505, -0.09], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([51.5, -0.09]).addTo(map)
+    .bindPopup('Your Location')
+    .openPopup();
+
+
+</script>
+
+
+
+
+
+
+
+
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+
+
+    
+</body>
+
+</html>
